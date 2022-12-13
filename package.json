@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Jac0bhung/todo-list#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-handlebars": "^4.0.2",
     "mongoose": "^5.9.7"
   },
   "devDependencies": {
