@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Jac0bhung/todo-list#readme",
   "dependencies": {
     "-": "0.0.1",
+    "body-parser": "^1.20.1",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.2",
     "g": "^2.0.1",
