@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 const todoSchema = new Schema({
   name: {
     type: String,
-    require: true,
+    required: true,
   },
-  done: {
+  isDone: {
     type: Boolean,
+    default: false, // 預設完成狀態為 false
   },
 });
-
 module.exports = mongoose.model("Todo", todoSchema);
