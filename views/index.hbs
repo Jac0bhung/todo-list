@@ -2,7 +2,8 @@
 <ul>
   {{#each todos}}
     <li>
-      <input type="checkbox" name="isDone" {{#if this.isDone }} checked {{/if}} disabled>
+      <input type="checkbox" name="isDone" {{#if this.isDone }} checked {{/if}} disabled>  
+      {{!-- 改enable也需要save --}}
       {{this.name}}
       <a href="./todos/{{this._id}}">detail</a>
       <a href="./todos/{{this._id}}/edit">edit</a>
