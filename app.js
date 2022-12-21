@@ -1,28 +1,30 @@
 const express = require("express");
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
 const Todo = require("./models/todo");
 const methodOverride = require("method-override");
 const routes = require("./routes");
 
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
+require("./config/mongoose");
+
+// if (process.env.NODE_ENV !== "production") {
+//   require("dotenv").config();
+// }
 const app = express();
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// mongoose.connect(process.env.MONGODB_URI, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 
-const db = mongoose.connection;
-db.on("error", () => {
-  console.log("mongodb error!");
-});
+// const db = mongoose.connection;
+// db.on("error", () => {
+//   console.log("mongodb error!");
+// });
 
-db.once("open", () => {
-  console.log("mongodb connected!");
-});
+// db.once("open", () => {
+//   console.log("mongodb connected!");
+// });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
@@ -30,8 +32,6 @@ app.use(routes);
 
 app.engine("hbs", exphbs({ defaultLayout: "main", extname: ".hbs" }));
 app.set("view engine", "hbs");
-
-
 
 // app.get("/", (req, res) => {
 //   Todo.find() // 取出 Todo model 裡的所有資料
@@ -51,7 +51,6 @@ app.set("view engine", "hbs");
 //     .then(() => res.redirect("/"))
 //     .catch((error) => console.log(error));
 // });
-
 
 // app.get("/todos/:id", (req, res) => {
 //   const id = req.params.id;
