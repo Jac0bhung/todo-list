@@ -12,6 +12,7 @@ require("./config/mongoose");
 //   require("dotenv").config();
 // }
 const app = express();
+const PORT = process.env.PORT || 3000;
 // mongoose.connect(process.env.MONGODB_URI, {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
@@ -89,6 +90,6 @@ app.set("view engine", "hbs");
 //     .catch((error) => console.log(error));
 // });
 
-app.listen(3000, () => {
-  console.log("App is running on http://localhost:3000");
+app.listen(PORT, () => {
+  console.log(`App is running on http://localhost:${PORT}`);
 });
